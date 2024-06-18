@@ -1,0 +1,15 @@
+@mixin font($fontSize, $fontWeight, $lineHeight, $fontColor, $letterSpacing) {
+  font-family: "Poppins", sans-serif;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: $fontColor;
+  letter-spacing: $letterSpacing;
+}
+@mixin flex($flexDirection, $justifyContent, $alignItems, $gap) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  gap: $gap;
+}

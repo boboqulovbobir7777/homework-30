@@ -1,0 +1,43 @@
+head,
+body {
+  height: 100%;
+}
+body {
+  background-color: rgba(239, 241, 247, 1);
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    button {
+      border-radius: 28px;
+      background-color: rgba(43, 208, 208, 1);
+      a {
+        @include font(15px, 700, 22.5px, rgba(255, 255, 255, 1), 0);
+      }
+      transition-duration: 0.4s;
+      @media (hover: hover) {
+        &:hover {
+          background-color: rgba(154, 227, 227, 1);
+        }
+      }
+      @media (hover: none) {
+        &:active {
+          background-color: rgba(154, 227, 227, 1);
+        }
+      }
+    }
+    .wrapper {
+      max-width: 1158px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+    .main {
+      flex: 1 1 auto;
+    }
+  }
+}
+@import "./header";
+@import "./main";
+@import "./footer";

@@ -1,0 +1,108 @@
+.footer {
+  background-color: rgba(35, 33, 39, 1);
+  padding-bottom: 72px;
+  .boostLink {
+    margin-bottom: 72px;
+    padding: 57px 0;
+    background-image: url(../img/boostLink-background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex(column, center, center, 32px);
+    h4 {
+      text-align: center;
+      @include font(40px, 700, 48px, #fff, -1px);
+    }
+    button {
+      width: 197px;
+      height: 56px;
+      a {
+        @include font(20px, 700, 30px, #fff, 0);
+      }
+    }
+  }
+  .footer-list-wrapper {
+    @include flex(row, space-between, start, 0);
+    .footer-list {
+      @include flex(row, center, start, 100px);
+      .footer-list-box {
+        @include flex(column, start, start, 10px);
+        .footer-list-title {
+          margin-bottom: 12px;
+          @include font(16px, 700, 24px, #fff, -0.25px);
+        }
+        .footer-list-item {
+          cursor: pointer;
+          @include font(15px, 500, 22.5px, rgba(191, 191, 191, 1), -0.23px);
+          transition-duration: 0.4s;
+          @media (hover: hover) {
+            &:hover {
+              color: rgba(43, 208, 208, 1);
+            }
+          }
+          @media (hover: none) {
+            &:active {
+              color: rgba(43, 208, 208, 1);
+            }
+          }
+        }
+      }
+      .smm {
+        @include flex(row, center, start, 24px);
+        .smm-item {
+          svg {
+            cursor: pointer;
+            transition-duration: 0.4s;
+            @media (hover: hover) {
+              &:hover {
+                fill: rgba(43, 208, 208, 1);
+              }
+            }
+            @media (hover: none) {
+              &:active {
+                fill: rgba(43, 208, 208, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 950px) {
+  .footer {
+    padding-bottom: 56px;
+    .boostLink {
+      margin-bottom: 54px;
+      padding: 90px 0;
+      h4 {
+        @include font(28px, 700, 48px, #fff, -0.7px);
+      }
+    }
+    .footer-list-wrapper {
+      @include flex(column, space-between, center, 50px);
+      .footer-list {
+        @include flex(row, center, start, 50px);
+        .smm {
+          @include flex(column, center, start, 24px);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .footer {
+    .footer-list-wrapper {
+
+      .footer-list {
+        @include flex(column, center, center, 40px);
+        .footer-list-box {
+          @include flex(column, center, center, 10px);
+        }
+        .smm {
+          @include flex(row, center, start, 24px);
+        }
+      }
+    }
+  }
+}

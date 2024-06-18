@@ -1,0 +1,182 @@
+.header {
+  background-color: #fff;
+  .navbar {
+    padding: 48px 0 0 0;
+    @include flex(row, space-between, center, 0);
+    .navbar-left {
+      @include flex(row, stretch, center, 45.5px);
+      .navbar-list {
+        @include flex(row, stretch, center, 30px);
+        .navbar-list-item {
+          @include font(15px, 700, 22.5px, rgba(158, 154, 168, 1), 0);
+          transition-duration: 0.4s;
+          &:hover {
+            color: rgba(52, 49, 61, 1);
+          }
+        }
+      }
+    }
+    .navbar-right {
+      @include flex(row, stretch, center, 37px);
+      .navbar-login {
+        @include font(15px, 700, 22.5px, rgba(158, 154, 168, 1), 0);
+        transition-duration: 0.4s;
+        &:hover {
+          color: rgba(52, 49, 61, 1);
+        }
+      }
+      .navbar-signUp {
+        width: 105px;
+        height: 40px;
+        border-radius: 28px;
+        background-color: rgba(43, 208, 208, 1);
+        a {
+          @include font(15px, 700, 22.5px, rgba(255, 255, 255, 1), 0);
+        }
+        transition-duration: 0.4s;
+        &:hover {
+          background-color: rgba(154, 227, 227, 1);
+        }
+      }
+      .navbar-list-mobile{
+        display: none;
+      }
+    }
+  }
+  .head {
+    padding: 138px 0 54px;
+    @include flex(row, stretch, center, 0);
+    .head-info {
+      z-index: 1;
+      max-width: 565px;
+      h1 {
+        margin-bottom: 5px;
+        @include font(80px, 700, 90px, rgba(52, 49, 61, 1), -2px);
+      }
+      p {
+        margin-bottom: 38px;
+        @include font(22px, 500, 36px, rgba(158, 154, 168, 1), 0.15px);
+      }
+      button {
+        width: 197px;
+        height: 56px;
+        a {
+          @include font(20px, 700, 30px, rgba(255, 255, 255, 1), 0);
+        }
+      }
+    }
+    .head-img {
+      position: absolute;
+      right: -165px;
+      z-index: 0;
+    }
+  }
+  .shortlink {
+    @include flex(row, space-between, center, 30px);
+    transform: translateY(50%);
+    padding: 52px 64px;
+    border-radius: 10px;
+    background-image: url(../img/shortlink-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    input {
+      flex-grow: 2;
+      padding: 0 32px;
+      max-width: 769px;
+      height: 64px;
+      border-radius: 10px;
+      @include font(20px, 500, 36px, rgba(52, 49, 61, 1), 0.15px);
+      &::placeholder {
+        @include font(20px, 500, 36px, rgba(52, 49, 61, 0.5), 0.15px);
+      }
+      &:focus {
+        border: 1px solid rgba(52, 49, 61, 1);
+      }
+    }
+    button {
+      border-radius: 10px;
+      width: 188px;
+      height: 64px;
+      a {
+        @include font(20px, 700, 30px, rgba(255, 255, 255, 1), 0);
+      }
+    }
+  }
+}
+@media (max-width: 950px) {
+  .header {
+    .navbar {
+      padding: 40px 0 0 0;
+    }
+    .head {
+      padding: 67px 0 0px;
+      @include flex(column, stretch, center, 0);
+      .head-info {
+        order: 2;
+        text-align: center;
+        h1 {
+          margin-bottom: 15px;
+          @include font(42px, 700, 48px, rgba(52, 49, 61, 1), -1.05px);
+        }
+        p {
+          margin-bottom: 32px;
+          @include font(18px, 500, 30px, rgba(158, 154, 168, 1), 0.12px);
+        }
+      }
+      .head-img {
+        order: 1;
+        position: relative;
+        right: 0;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+@media (max-width: 720px) {
+  .header {
+    .navbar {
+      .navbar-left {
+        .navbar-list {
+          display: none;
+        }
+      }
+      .navbar-right {
+        @include flex(row, stretch, center, 37px);
+        .navbar-login,
+        .navbar-signUp {
+          display: none;
+        }
+        .navbar-list-mobile{
+          display: block;
+        }
+      }
+    }
+    .head {
+      .head-img {
+        height: 337px;
+      }
+    }
+    .shortlink {
+      @include flex(column, space-between, center, 16px);
+      padding: 24px;
+      input {
+        flex-grow: 2;
+        padding: 0 32px;
+        width: 100%;
+        height: 48px;
+        @include font(16px, 500, 36px, rgba(52, 49, 61, 1), 0.12px);
+        &::placeholder {
+          @include font(16px, 500, 36px, rgba(52, 49, 61, 0.5), 0.12px);
+        }
+      }
+      button {
+        width: 100%;
+        height: 48px;
+        a {
+          @include font(18px, 700, 27px, rgba(255, 255, 255, 1), 0);
+        }
+      }
+    }
+  }
+}
